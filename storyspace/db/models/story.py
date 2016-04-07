@@ -1,5 +1,6 @@
 from enum import Enum
 
+from storyspace import app
 from storyspace.db import db
 
 
@@ -35,3 +36,15 @@ class Story(db.Model):
 
     content     = db.Column(db.Text)
     image_name  = db.Column(db.String(256))
+
+    def dict_repr(self):
+        return {
+            'category':         Category(self.category).name,
+            'category_text':    Category(self.category).text(),
+            'latitude':         self.latitude,
+            'longitude':        self.longitude,
+            'title':            self.title,
+            'author':           self.author if self.author else None,
+            'content':          self.content,
+            'image_url':        app.config['IMAGE_UPLOAD_URL'] + '/' + self.image_name if self.image_name else None,
+        }

@@ -31,5 +31,6 @@ SECRET_KEY = secrets.SECRET_KEY
 # Application
 STATIC_FOLDERS = ['js', 'css', 'img']
 IMAGE_UPLOAD_PATH = os.path.join(BASE_DIR, 'uploads/images')
+IMAGE_UPLOAD_URL = '/uploads/images'
 IMAGE_EXT_ALLOW = ['jpg', 'jpeg', 'png', 'gif']
 MAX_CONTENT_LENGTH = 2 * 1024 * 1024

@@ -36,6 +36,11 @@ class StoryAPI(MethodView):
             db.session.add(story)
             db.session.commit()
 
-            return '', 204
+            return json.dumps({'success': True, 'story': story.dict_repr()}), 200
 
-        return json.dumps(form.errors), 400
+        return json.dumps({'success': False, 'errors': form.errors}), 400
+
+    def get(self):
+        result_set = {'stories': [story.dict_repr() for story in Story.query.all()]}
+
+        return json.dumps(result_set), 200
