@@ -1,0 +1,351 @@
+* {
+    margin: auto;
+    padding: 0;
+}
+
+@font-face {
+    font-family: montserrat-regular;
+    src: url(/assets/fonts/Montserrat-Regular.otf);
+}
+
+@font-face {
+    font-family: montserrat-semi;
+    src: url(/assets/fonts/montserrat-semibold.otf);
+}
+
+@font-face {
+    font-family: montserrat-bold;
+    src: url(/assets/fonts/montserrat-bold.otf);
+}
+
+body {
+    background-color: black;
+}
+
+section#welcome-overlay {
+    visibility: visible;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 50, .8);
+    color: white;
+    font-family: montserrat-regular;
+}
+
+section#welcome-overlay #welcome-text-container {
+    margin-top: 150px;
+    width: 8in;
+}
+
+section#welcome-overlay article {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+section#welcome-overlay ul#share-location li {
+    list-style-type: none;
+    display: inline;
+}
+
+section#welcome-overlay ul#share-location li a {
+    background-color: white;
+    border-radius: 5px;
+    font-family: montserrat-semi;
+    border: 0px solid;
+    padding: 5px 20px 5px 20px;
+    margin-right: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+}
+
+section#welcome-overlay ul#share-location li a:hover {
+    background-color: darkgray;
+}
+
+section#about-overlay,
+section#contact-overlay {
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(50, 50, 50, .8);
+    font-family: montserrat-regular;
+    color: white;
+}
+
+section#about-overlay h2,
+section#contact-overlay h2 {
+    margin-top: 120px;
+    margin-bottom: 40px;
+    width: 8in;
+}
+
+section#about-overlay p,
+h3,
+section#contact-overlay p {
+    margin-top: 15px;
+    padding: 0px 100px 0px 100px;
+    width: 8in;
+}
+
+section#about-overlay p,
+section#contact-overlay p {
+    font-size: 15px;
+}
+
+section#contact-overlay a:link {
+    text-decoration: none;
+    color: white;
+}
+
+section#about-overlay nav#about-close a,
+section#contact-overlay nav#contact-close a {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 35px;
+    border: 2px solid white;
+    width: 50px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+section#about-overlay nav#about-close a:hover,
+section#contact-overlay nav#contact-close a:hover {
+    color: darkgray;
+}
+
+nav#top-nav {
+    font-family: montserrat-semi;
+    position: absolute;
+    top: -20px;
+    width: 100%;
+    font-size: 14px;
+    padding: 20px 5px 35px 15px;
+    background-color: #262626;
+}
+
+.info-nav,
+.contact-nav {
+    font-family: montserrat-regular;
+    font-size: 10px;
+}
+
+nav#top-nav ul.left-nav-logo li img {
+    position: absolute;
+    top: 28px;
+}
+
+.left-nav {
+    position: absolute;
+    left: 75px;
+}
+
+.right-nav {
+    position: absolute;
+    right: 25px;
+}
+
+nav#top-nav ul li {
+    display: inline;
+    margin-right: 15px;
+    color: lightgray;
+}
+
+nav#top-nav ul li.filter {
+    font-family: montserrat-regular;
+    font-size: 11px;
+    margin-left: 60px;
+}
+
+nav#top-nav ul li a {
+    color: #b6a536;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav#top-nav ul li.universe a {
+    border: 0px solid;
+    padding: 5px 15px 5px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+nav#top-nav ul li.universe a.shown {
+    opacity: 1;
+}
+
+nav#top-nav ul li.universe a:not(.shown) {
+    opacity: 0.5;
+}
+
+nav#top-nav ul li.universe a#race {
+    background-color: #b66bab;
+}
+
+nav#top-nav ul li.universe a#race:hover {
+    background-color: #895080;
+}
+
+nav#top-nav ul li.universe a#gender {
+    background-color: #e63f5f;
+}
+
+nav#top-nav ul li.universe a#gender:hover {
+    background-color: #AD2F47;
+}
+
+nav#top-nav ul li.universe a#sexuality {
+    background-color: #51c6e0;
+}
+
+nav#top-nav ul li.universe a#sexuality:hover {
+    background-color: #3D95A8;
+}
+
+nav#top-nav ul li.universe a#class {
+    background-color: #68bf76;
+}
+
+nav#top-nav ul li.universe a#class:hover {
+    background-color: #4E8F59;
+}
+
+nav#top-nav ul li.universe a#all {
+    background-color: #808080;
+}
+
+nav#top-nav ul li.universe a#all:hover {
+    background-color: #555555;
+}
+
+nav#top-nav ul li#share a {
+    border: 0px solid;
+    padding: 5px 15px 5px 15px;
+    background-color: #b6a536;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+nav#top-nav ul li#share a:hover {
+    background-color: #92842B;
+}
+
+
+/*
+nav#top-nav ul li form#search-bar input {
+    background: none;
+    position: absolute;
+    top: 15px;
+    right: 80px;
+    padding: 5px 8px 5px 15px;
+    border-radius: 5px;
+    font-family: montserrat-semi;
+    color: white;
+}
+*/
+
+section#instruction-bar h2 {
+    display: none;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    color: white;
+    font-family: montserrat-regular;
+    font-size: 12px;
+    text-align: center;
+    padding: 20px 0px 15px 0px;
+    background: black;
+}
+
+
+/*share overlay*/
+section#share-overlay {
+    /*margin-left: 250px;
+    width: 55%;
+    height: 80%;
+    position: absolute;
+    top: 65px;
+    */
+    border-radius: 7px;
+    background-color: rgba(50, 50, 50, .9);
+    /*visibility: hidden;*/
+    font-family: montserrat-semibold;
+    color: white;
+    padding: 30px 30px 0px 100px;
+}
+
+section#share-overlay h2 {
+    float: left;
+    font-family: montserrat-semi;
+    color: white;
+    font-size: 30px;
+}
+
+section#share-overlay form#share-form {
+    font-family: montserrat-semi;
+    color: white;
+}
+
+section#share-overlay form#share-form #title-input,
+#name-input {
+    width: 500px;
+    border-radius: 5px;
+    background-color: lightgray;
+    padding: 5px 10px 5px 10px;
+    margin-top: 20px;
+    border: none;
+    font-family: montserrat-semi;
+}
+
+section#share-overlay form#share-form textarea {
+    width: 500px;
+    height: 150px;
+    border-radius: 5px;
+    background-color: lightgray;
+    padding: 5px 10px 5px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    font-family: montserrat-semi;
+}
+
+section#share-overlay form#share-form input[type="submit"] {
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    font-family: montserrat-semi;
+    border: none;
+}
+
+section#share-overlay form#share-form input[type="submit"]:hover {
+    background-color: darkgray;
+}
+
+section#share-overlay nav#share-close a {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 35px;
+    border: 2px solid white;
+    width: 50px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-family: montserrat-semi;
+}
+
+section#share-overlay nav#share-close a:hover {
+    color: darkgray;
+}
+
+#mapid {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}

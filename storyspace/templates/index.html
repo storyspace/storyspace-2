@@ -1,1 +1,124 @@
-Hello, world!
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!--<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="{{ url_for('assets', filepath='css/main.css') }}">
+
+    <title>Story Space</title>
+</head>
+
+<body>
+    <!--map-->
+    <div id="mapid"></div>
+    <!--top nav-->
+    <nav id=top-nav>
+        <ul class="left-nav-logo">
+            <li><img src="{{ url_for('assets', filepath='img/logo_small.png') }}" width=49 height=29></li>
+        </ul>
+        <ul class="left-nav">
+            <li>Story Space</li>
+            <li><a href="#" class="info-nav">About</a></li>
+            <li><a href="#" class="contact-nav">Contact Us</a></li>
+        </ul>
+        <ul class="right-nav">
+            <li class="filter"> Filter stories: </li>
+            <li class="universe"><a id="race" class="shown" href="#">Race</a></li>
+            <li class="universe"><a id="gender" class="shown" href="#">Gender</a></li>
+            <li class="universe"><a id="sexuality" class="shown" href="#">Sexuality</a></li>
+            <li class="universe"><a id="class" class="shown" href="#">Social Class</a></li>
+            <li class="universe"><a id="all" class="shown" href="#">Show All</a></li>
+            <li> | </li>
+            <li id="share"><a href="#">Share your story!</a>
+            </li>
+            <!--Search Bar (in progress)
+            <li>
+
+                <form name="search" id="search-bar">
+                    <input type="text" name="search" placeholder="Search">
+                </form>
+            </li>
+-->
+        </ul>
+    </nav>
+
+    <!--welcome overlay-->
+    <section id="welcome-overlay">
+        <div id="welcome-text-container">
+            <h2>Welcome!</h2>
+            <article> This is a safe space for you to share your story. Each universe contains real stories about real experiences.
+                <br>
+                <br> In order to provide the best experience for you and for your readers, we ask that you share your location with us. Is that okay? (Don't worry you can still use the site if you choose not to!)
+            </article>
+            <ul id="share-location">
+                <li><a href="#" id="yes-location">Yes</a></li>
+                <li><a href="#" id="no-enter">No</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!--instruction bar-->
+    <section id="instruction-bar">
+        <h2 id="beginning">Click on a colored marker to read a story, or share your own story! Navigate around the map to see more stories.</h2>
+        <h2 id="shared">Your story has been posted!</h2>
+    </section>
+
+    <!--about overlay-->
+    <section id="about-overlay">
+        <h2><img src="{{ url_for('assets', filepath='img/logo_big.png')}}"><br/>About the project</h2>
+        <h3> Background</h3>
+        <p>Racism, homophobia, sexism, classism are just a few of the long list of forms of prejudice that people still experience today. Although we recognize the strides society has made in fighting for equality, it is undeniable that discrimination still exists. Everyday, people face prejudices and everyday, people lose themselves, their lives and their loved ones, to hateful words and actions. In lieu of the anger and pain we have witnessed these past years, we recognize the need to root activism for equality in love, rather than in anger, bitterness, sympathy or ignorance.</p>
+        <h3>Purpose</h3>
+        <p>"Story Share" seeks to generate a culture of compassion and love for people of different backgrounds and preferences. Through personal stories, we hope to educate and empower. We hope that both victims and bystanders will take this awareness and make a change in their community. </p>
+        <nav id="about-close"><a href="#">X</a></nav>
+    </section>
+
+    <!--contact overlay-->
+    <section id="contact-overlay">
+        <h2> Designers: Alicia Tang and Tiffany Choi </h2>
+        <p> Email Alicia at <a href="mailto:alitang@ucdavis.edu"> alitang@ucdavis.edu </a> and Tiffany at<a href="mailto:tchoi@ucdavis.edu"> tchoi@ucdavis.edu </a>
+        </p>
+        <nav id="contact-close"><a href="#">X</a></nav>
+    </section>
+
+
+    <!--share a story overlay-->
+    <div id=dialog>
+        <section id="share-overlay">
+            <h2>Share your story</h2>
+            <br>
+            <nav id="share-close"><a href="#">X</a></nav>
+            <form name="share" id="share-form">
+                <br>
+                <p> Which category does your story belong in? </p>
+                <br>
+                <input type="radio" name="universe" value="race"> Race &nbsp;
+                <input type="radio" name="universe" value="gender"> Gender &nbsp;
+                <input type="radio" name="universe" value="sexuality"> Sexuality &nbsp;
+                <input type="radio" name="universe" value="class"> Social Class &nbsp;
+                <br>
+                <input type="text" name="title" placeholder="Title" id="title-input">
+                <br>
+                <input type="text" name="name" placeholder="Name (optional)" id="name-input">
+                <br>
+                <textarea name="body" placeholder="Write your story here..."></textarea>
+
+                <br>Upload image (optional):
+
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <br>
+                <br>
+                <input type="submit" value="Submit" />
+            </form>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="{{ url_for('assets', filepath='js/main.js') }}"></script>
+</body>
+
+</html>
