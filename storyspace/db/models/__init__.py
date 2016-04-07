@@ -1,0 +1,3 @@
+all = ['Story', 'Category', 'CATEGORIES', 'TITLE_MAX_LEN', 'AUTHOR_MAX_LEN', 'CONTENT_MAX_LEN']
+
+from story import Story, Category, CATEGORIES, TITLE_MAX_LEN, AUTHOR_MAX_LEN, CONTENT_MAX_LEN

@@ -9,7 +9,7 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # Define the database - we are working with
 # SQLite for this example
-SQLALCHEMY_DATABASE_DEFINITION = 'sqlite:///' + os.path.join(BASE_DIR, 'app.db')
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'app.db')
 DATABASE_CONNECT_OPTIONS = {}
 
 # Application threads. A common general assumption is
@@ -31,3 +31,5 @@ SECRET_KEY = secrets.SECRET_KEY
 # Application
 STATIC_FOLDERS = ['js', 'css', 'img']
 IMAGE_UPLOAD_PATH = os.path.join(BASE_DIR, 'uploads/images')
+IMAGE_EXT_ALLOW = ['jpg', 'jpeg', 'png', 'gif']
+MAX_CONTENT_LENGTH = 2 * 1024 * 1024
