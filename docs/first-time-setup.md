@@ -22,6 +22,12 @@ Then, we will install `virtualenv`, a tool used to create and manage development
 sudo pip install virtualenv
 ```
 
+Navigate to the Storyspace repository.
+
+```
+cd storyspace
+```
+
 Next, we will create our own development environment for the Storyspace project, "activate" the environment, and install any dependencies.
 
 > Note that this particular invocation of `pip` does not use `sudo`. Using `sudo` will result in `pip` installing packages outside the development environment.
@@ -30,6 +36,12 @@ Next, we will create our own development environment for the Storyspace project,
 virtualenv env/
 source env/bin/activate
 pip install -r requirements.txt
+```
+
+We'll need to create a `secrets.py` file with some secret keys. This file should not have come with the cloned `git` repository, as it is `.gitignore`'d.
+
+```
+printf "CSRF_SESSION_KEY = 'foo'\nSECRET_KEY = 'bar'\n" > secrets.py
 ```
 
 You should now have all the necessary components to spin up a development server.
