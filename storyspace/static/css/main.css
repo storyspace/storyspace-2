@@ -207,11 +207,11 @@ nav#top-nav ul li.universe a#sexuality:hover {
     background-color: #3D95A8;
 }
 
-nav#top-nav ul li.universe a#class {
+nav#top-nav ul li.universe a#social_class {
     background-color: #68bf76;
 }
 
-nav#top-nav ul li.universe a#class:hover {
+nav#top-nav ul li.universe a#social_class:hover {
     background-color: #4E8F59;
 }
 
@@ -347,5 +347,10 @@ section#share-overlay nav#share-close a:hover {
 #mapid {
     position: absolute;
     height: 100%;
+    width: 100%;
+}
+
+img.storyimage {
+    position: relative;
     width: 100%;
 }

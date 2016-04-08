@@ -1,110 +1,4 @@
 $(document).ready(function () {
-    console.log("ready");
-
-    //alert("Hello! What you will be seeing and using is just a prototype, so some links and functions may not work just yet. Thank you for taking the time to test our website!");
-
-    //geoLocation
-    var latitude = undefined;
-    var longitude = undefined;
-
-    function getLocation() {
-        var location = document.getElementById("location");
-
-        if (!navigator.geolocation) {
-            console.log("geolocation not supported by browser");
-            return;
-        }
-
-        function success(position) {
-            latitude = position.coords.latitude;
-            longitude = position.coords.longitude;
-            $('section#welcome-overlay').css('visibility', 'hidden');
-
-            mymap.setZoom(14);
-            mymap.panTo([latitude, longitude]);
-            $('section#instruction-bar h2#beginning').fadeIn(2000);
-            $('section#instruction-bar h2#beginning').delay(15000);
-            $('section#instruction-bar h2#beginning').fadeOut(2000);
-        }
-
-        function error() {
-            console.log("error");
-        };
-        navigator.geolocation.getCurrentPosition(success, error);
-    }
-
-    //clicked yes-location, brings up dialogue box
-    $('section#welcome-overlay ul#share-location li a#yes-location').click(function () {
-        getLocation();
-    });
-
-    //clicked no-enter, closes overlay
-    $('section#welcome-overlay ul#share-location li a#no-enter').click(function () {
-        $('section#welcome-overlay').css('visibility', 'hidden');
-        $('section#instruction-bar h2#beginning').fadeIn(2000);
-        $('section#instruction-bar h2#beginning').delay(15000);
-        $('section#instruction-bar h2#beginning').fadeOut(2000);
-    });
-
-    //about overlay
-    $('nav#top-nav ul li a.info-nav').click(function () {
-        $('section#about-overlay').css('visibility', 'visible');
-        return false;
-    });
-
-    //about overlay close
-    $('section#about-overlay #about-close a').click(function () {
-        $('section#about-overlay').css('visibility', 'hidden');
-    });
-
-    //contact overlay
-    $('nav#top-nav ul.left-nav li a.contact-nav').click(function () {
-        $('section#contact-overlay').css('visibility', 'visible');
-        return false;
-    });
-
-    //contact overlay close
-    $('section#contact-overlay #contact-close a').click(function () {
-        $('section#contact-overlay').css('visibility', 'hidden');
-    });
-
-    $('nav#top-nav ul li#share a').click(function (event) {
-        console.log("clicked share button");
-        //event.stopPropagation();
-        //$('section#share-overlay').css('visibility', 'visible');
-        $('#dialog').dialog('open');
-    });
-
-    $('body').bind('click', function(e) {
-        if($('#dialog').dialog('isOpen')
-            && !$(e.target).is('.ui-dialog, a')
-            && !$(e.target).closest('.ui-dialog').length
-        ) {
-            $('#dialog').dialog('close');
-        }
-    });
-
-    //share overlay
-    $('#dialog').dialog({
-        autoOpen: false,
-        modal: false,
-        draggable: false,
-        resizable: false,
-        position:[250,65],
-        width:800,
-        //height:600,
-//        open: function() {
-//            $('.ui-widget-overlay').bind('click', function() {
-//                $('#dialog').dialog('close');
-//            })
-//        }
-    });
-
-     //share overlay close
-    $('#share-overlay nav#share-close a').click(function () {
-        //$('section#share-overlay').css('visibility', 'hidden');
-        $('#dialog').dialog('close');
-    });
 
     //share overlay process form
     $('#share-overlay form#share-form input[type="submit"]').click(function (e) {
@@ -145,41 +39,6 @@ $(document).ready(function () {
         //push story object onto "stories" database so that it can be toggled through top-nav
         stories.push(story);
     });
-
-    // create map
-    var mymap = L.map('mapid', {
-        zoomControl: false
-    }).setView([30, 0], 2);
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-        maxZoom: 15,
-        id: 'tiffachoi.pbn9d7d4',
-        accessToken: 'pk.eyJ1IjoidGlmZmFjaG9pIiwiYSI6ImNpbGphMGc4NTRiNmZ1dG0wMG5zMzFsMWIifQ.M8zCDPQqnFfczyJc79VMDQ'
-    }).addTo(mymap);
-
-    //zoom button
-    new L.Control.Zoom({
-        position: 'bottomleft'
-    }).addTo(mymap);
-
-    //define marker icons
-    var icons = {
-        race: L.icon({
-            iconUrl: '/assets/img/icon-race.png',
-            iconSize: [30, 30]
-        }),
-        gender: L.icon({
-            iconUrl: '/assets/img/icon-gender.png',
-            iconSize: [30, 30]
-        }),
-        sexuality: L.icon({
-            iconUrl: '/assets/img/icon-sexuality.png',
-            iconSize: [30, 30]
-        }),
-        class: L.icon({
-            iconUrl: '/assets/img/icon-class.png',
-            iconSize: [30, 30]
-        }),
-    }
 
     //hard coded sample stories
     var stories = [
@@ -272,7 +131,6 @@ $(document).ready(function () {
 
     //define function that shows stories based on what is selected in top-nav
     var showStories = function (stories, categories) {
-
         for (i in stories) {
             story = stories[i];
 
