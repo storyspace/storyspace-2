@@ -51,11 +51,13 @@
             <h2>Welcome!</h2>
             <article> This is a safe space for you to share your story. Each universe contains real stories about real experiences.
                 <br>
-                <br> In order to provide the best experience for you and for your readers, we ask that you share your location with us. Is that okay? (Don't worry you can still use the site if you choose not to!)
+                <br> In order to provide the best experience for you and for your readers, we ask that you share your location with us. 
+                <br>
+                <br> Do you want to share your location with us? (Don't worry you can still use the site if you choose not to!)
             </article>
             <ul id="share-location">
-                <li><a href="#" id="yes-location">Yes</a></li>
-                <li><a href="#" id="no-enter">No</a></li>
+                <li><a href="#" id="yes-location">Yes, I would like to share my location.</a></li>
+                <li><a href="#" id="no-enter">No, I do not want to share my location.</a></li>
             </ul>
         </div>
     </section>
@@ -72,7 +74,7 @@
         <h3> Background</h3>
         <p>Racism, homophobia, sexism, classism are just a few of the long list of forms of prejudice that people still experience today. Although we recognize the strides society has made in fighting for equality, it is undeniable that discrimination still exists. Everyday, people face prejudices and everyday, people lose themselves, their lives and their loved ones, to hateful words and actions. In lieu of the anger and pain we have witnessed these past years, we recognize the need to root activism for equality in love, rather than in anger, bitterness, sympathy or ignorance.</p>
         <h3>Purpose</h3>
-        <p>"Story Share" seeks to generate a culture of compassion and love for people of different backgrounds and preferences. Through personal stories, we hope to educate and empower. We hope that both victims and bystanders will take this awareness and make a change in their community. </p>
+        <p>"Story Space" seeks to generate a culture of compassion and love for people of different backgrounds and preferences. Through personal stories, we hope to educate and empower. We hope that both victims and bystanders will take this awareness and make a change in their community. </p>
         <nav id="about-close"><a href="#">X</a></nav>
     </section>
 
@@ -122,6 +124,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="../static/js/masonry.pkgd.min.js"></script>
 
     <script src="{{ url_for('assets', filepath='js/stories.js') }}"></script>
     <script src="{{ url_for('assets', filepath='js/geolocation.js') }}"></script>

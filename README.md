@@ -25,6 +25,6 @@ After receiving feedback from students at our weekly class meeting, we decided t
     
 3) the list view will take on a multiple-column grid-like format that will be flexible to the length of each user's post
 
-From there, we revisited our sketches, created a mockup of the interface and coded a template using the Masonry jQuery library. We are now in the process of researching libraries to implement a horizontal scrolling animation. 
+From there, we revisited our sketches, created a mockup of the interface and coded a template using the Masonry jQuery library (index2.html). We are now in the process of researching libraries to implement a horizontal scrolling animation. 
 
 In addition to beginning the work on the list view, we were able to begin work on the back end portion of Story Space (courtesy of our official back end developer for this project: Kelvin!). A new repository on github was created to merge the front end and back end, and a database was created to store our stories. 
