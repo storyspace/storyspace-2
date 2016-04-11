@@ -91,7 +91,7 @@
             <h2>Share your story</h2>
             <br>
             <nav id="share-close"><a href="#">X</a></nav>
-            <form name="share" id="share-form">
+            <form name="share" id="share-form" enctype="multipart/form-data" method="post">
                 <br>
                 <p> Which category does your story belong in? </p>
                 <br>
@@ -109,7 +109,7 @@
                 <br>
                 <a>Upload image (optional):</a>
 
-                <input type="file" name="fileToUpload" id="fileToUpload">
+                <input type="file" name="image" id="image">
                 <br>
                 <br>
                 <input type="hidden" name="latitude" placeholder="" id="latitude">

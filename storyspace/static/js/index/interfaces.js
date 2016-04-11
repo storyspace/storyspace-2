@@ -138,7 +138,7 @@ function bind_interfaces(stories, map, locator) {
             $('section#instruction-bar h2#shared').delay(7000);
             $('section#instruction-bar h2#shared').fadeOut(2000);
 
-            stories.post($('#share-overlay form#share-form').serialize(), 'storyspacenewstory');
+            stories.post(new FormData(document.forms.share), 'storyspacenewstory');
 
             //resets share story form
             document.share.reset();

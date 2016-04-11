@@ -1,6 +1,7 @@
 storyspaceStories = (function(){
     storyspaceStories = function(options) {
         this.endpoint = options.endpoint;
+        this.csrftoken = options.csrftoken;
         this.stories = [];
     };
 
@@ -13,17 +14,24 @@ storyspaceStories = (function(){
         }, this), 'json');
     };
 
-    storyspaceStories.prototype.post = function(data, eventname) {
-        $.post(this.endpoint, data, $.proxy(function(data) {
-            story = data.story;
+    storyspaceStories.prototype.post = function(formdata, eventname) {
+        var self = this;
+        var req = new XMLHttpRequest();
+        req.open('POST', this.endpoint, true);
+        req.responseType = 'json';
 
-            this.stories.push(story);
+        req.onload = function(e) {
+            if (req.status == 200) {
+                newStoryEvent = new CustomEvent(eventname, {'detail': req.response.story});
+                document.dispatchEvent(newStoryEvent);
+            } else {
+                console.log("Story POST failed");
+                console.log(req.response);
+            }
+        };
 
-            newStoryEvent = new CustomEvent(eventname, {'detail': story});
-            document.dispatchEvent(newStoryEvent);
-        }, this), 'json').fail(function(data) {
-            console.log(data);
-        });
+        req.setRequestHeader('X-CSRFToken', this.csrftoken);
+        req.send(formdata);
     };
 
     return storyspaceStories;
