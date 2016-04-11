@@ -1,6 +1,8 @@
 # storyspace
-
 Week 1
+Prepare presentation for group studies. Create timeline of schedule for the quarter.
+
+Week 2
 
 This week, we fixed a small glitch with posting a story. Before, the message “Your story has been posted” would appear when the user closed out of the share your story form even if there was no story was submitted. 
 
