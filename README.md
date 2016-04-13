@@ -1,9 +1,10 @@
-# storyspace
-Week 1
+### storyspace
+
+# Week 1
 
 Prepare presentation for group studies. Create timeline of schedule for the quarter.
 
-Week 2
+# Week 2
 
 This week, we fixed a small glitch with posting a story. Before, the message “Your story has been posted” would appear when the user closed out of the share your story form even if there was no story was submitted. 
 
@@ -15,15 +16,13 @@ On the "share your story" overlay, we have added an additional method for users 
 
 We also created Story Space into an organization on github so that we can now use github to properly collaborate and code this project together in a much simpler way than before. 
 
-Week 3
+# Week 3
 
 After receiving feedback from students at our weekly class meeting, we decided to prioritize the "list view" function of our website. We began by researching and sketching formats to display non-location-based stories. In our brainstorm, we came across questions like "which view should users see first", "what are the preferences of returning users", "how will users toggle between the views", "how do we communicate that the list view functions similarly to the map view" and ultimately "how will users know what to do?!". After playing around with the idea of a "split-screen" interface and delayed animation, we decided on several things:
 
-1) users will receive the map view as a default view, and will be given the option to toggle    between the two views through a) horizontal scrolling and b) a toggle button
-
-2) users will be given a brief tutorial of how to navigate the website, with the option of exiting the tutorial through a direct "skip" button or by through independently navigating the website
-    
-3) the list view will take on a multiple-column grid-like format that will be flexible to the length of each user's post
+1. users will receive the map view as a default view, and will be given the option to toggle between the two views through a) horizontal scrolling and b) a toggle button
+2. users will be given a brief tutorial of how to navigate the website, with the option of exiting the tutorial through a direct "skip" button or by through independently navigating the website
+3. the list view will take on a multiple-column grid-like format that will be flexible to the length of each user's post
 
 From there, we revisited our sketches, created a mockup of the interface and coded a template using the Masonry jQuery library (index2.html). We are now in the process of researching libraries to implement a horizontal scrolling animation. 
 
