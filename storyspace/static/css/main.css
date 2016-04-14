@@ -354,3 +354,29 @@ img.storyimage {
     position: relative;
     width: 100%;
 }
+
+div.leaflet-div-icon {
+    background: transparent;
+    border: none;
+}
+
+svg.story_icon {
+    height: 100%;
+    width: 100%;
+}
+
+svg.story_icon .race {
+    fill: #b66bab;
+}
+
+svg.story_icon .gender {
+    fill: #e63f5f;
+}
+
+svg.story_icon .sexuality {
+    fill: #51c6e0;
+}
+
+svg.story_icon .social_class {
+    fill: #68bf76;
+}

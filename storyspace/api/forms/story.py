@@ -1,5 +1,5 @@
 from flask_wtf import Form
-from wtforms import validators, StringField, DecimalField, RadioField, TextAreaField
+from wtforms import validators, StringField, DecimalField, SelectField, TextAreaField
 from flask_wtf.file import FileField, FileAllowed
 from werkzeug import secure_filename
 
@@ -9,7 +9,7 @@ from storyspace.db.models import story
 
 
 class StoryForm(Form):
-    category    = RadioField('Category', choices=story.CATEGORIES)
+    categories  = StringField('Categories', [validators.InputRequired()])
     latitude    = DecimalField('Latitude', [validators.NumberRange(min=-90.0, max=90.0)])
     longitude   = DecimalField('Longitude',  [validators.NumberRange(min=-180.0, max=180.0)])
 

@@ -13,23 +13,8 @@ $(document).ready(function() {
             id: 'tiffachoi.pbn9d7d4',
             accessToken: 'pk.eyJ1IjoidGlmZmFjaG9pIiwiYSI6ImNpbGphMGc4NTRiNmZ1dG0wMG5zMzFsMWIifQ.M8zCDPQqnFfczyJc79VMDQ'
         },
-        icons: {
-            race: L.icon({
-                iconUrl: '/assets/img/icon-race.png',
-                iconSize: [30, 30]
-            }),
-            gender: L.icon({
-                iconUrl: '/assets/img/icon-gender.png',
-                iconSize: [30, 30]
-            }),
-            sexuality: L.icon({
-                iconUrl: '/assets/img/icon-sexuality.png',
-                iconSize: [30, 30]
-            }),
-            social_class: L.icon({
-                iconUrl: '/assets/img/icon-class.png',
-                iconSize: [30, 30]
-            }),
+        icon_options: {
+            icon_radius: 10
         },
     });
 

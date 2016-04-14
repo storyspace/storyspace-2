@@ -91,7 +91,8 @@ function bind_interfaces(stories, map, locator) {
             story = stories[i];
 
             story.marker = L.marker([story.latitude, story.longitude], {
-                icon: map.icons[story.category]
+                icon: map.icon(story.categories),
+                opacity: 1
             }).bindPopup(
                 '<strong>' + story.title + '</strong>' + '<br>' + story.content + '<br><em>' + (story.author || 'anonymous') + '</em>' + (story.image_url ? ('<br><br><img class="storyimage" src="' + story.image_url + '"/>') : '')
             ).addTo(map.map);
@@ -101,13 +102,21 @@ function bind_interfaces(stories, map, locator) {
     var showStories = function (stories, categories) {
         for (i in stories) {
             story = stories[i];
+            show = false;
 
-            if (categories.indexOf(story.category) == -1) {
-                story.marker.setOpacity(0.0);
-                story.marker.clickable = false;
-            } else {
+            for (i = 0; (!show && (i < story.categories.length)); ++i)
+                for (j = 0; j < categories.length; ++j)
+                    if (story.categories[i] == categories[j]) {
+                        show = true;
+                        break;
+                    }
+
+            if (show) {
                 story.marker.setOpacity(1.0);
                 story.marker.clickable = true;
+            } else {
+                story.marker.setOpacity(0.0);
+                story.marker.clickable = false;
             }
         }
         return false;
@@ -129,7 +138,7 @@ function bind_interfaces(stories, map, locator) {
         e.preventDefault();
 
         //error detection
-        if (!document.share.category.value || !document.share.title.value || !document.share.content.value) {
+        if (!$("form#share-form input[name='category']:checked") || !document.share.title.value || !document.share.content.value) {
             alert("You haven't finished your story!");
         } else {
             //closes share overlay
@@ -138,7 +147,10 @@ function bind_interfaces(stories, map, locator) {
             $('section#instruction-bar h2#shared').delay(7000);
             $('section#instruction-bar h2#shared').fadeOut(2000);
 
-            stories.post(new FormData(document.forms.share), 'storyspacenewstory');
+            fd = new FormData(document.forms.share);
+
+            fd.append('categories', $.map($("form#share-form input[name='category']:checked"), function(input) {return input.value}).join())
+            stories.post(fd, 'storyspacenewstory');
 
             //resets share story form
             document.share.reset();

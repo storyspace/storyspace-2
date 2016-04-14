@@ -8,14 +8,14 @@ import binascii
 from storyspace import app
 from storyspace.api.forms import StoryForm
 from storyspace.db import db
-from storyspace.db.models import Story, Category
+from storyspace.db.models import Story
 
 
 
 class StoryAPI(MethodView):
     def post(self):
         form = StoryForm()
-
+        
         if form.validate_on_submit():
             filename = None
 
@@ -24,7 +24,7 @@ class StoryAPI(MethodView):
                 form.image.data.save(os.path.join(app.config['IMAGE_UPLOAD_PATH'], filename))
 
             story = Story(
-                category    = Category[form.category.data].value,
+                categories  = form.categories.data,
                 latitude    = form.latitude.data,
                 longitude   = form.longitude.data,
                 title       = form.title.data,

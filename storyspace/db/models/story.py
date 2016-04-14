@@ -1,25 +1,14 @@
-from enum import Enum
-
 from storyspace import app
 from storyspace.db import db
 
 
 
-class Category(Enum):
-    race            = 1
-    gender          = 2
-    sexuality       = 3
-    social_class    = 4
-
-    def text(self):
-        return ({
-            'race':         'Race',
-            'gender':       'Gender',
-            'sexuality':    'Sexuality',
-            'social_class': 'Social Class',
-        }).get(self.name, self.name)
-
-CATEGORIES      = [(category.name, category.text()) for category in Category]
+CATEGORIES      = {
+    'race':         'Race',
+    'gender':       'Gender',
+    'sexuality':    'Sexuality',
+    'social_class': 'Social Class',
+}
 TITLE_MAX_LEN   = 256
 AUTHOR_MAX_LEN  = 64
 CONTENT_MAX_LEN = 256 * 10
@@ -27,7 +16,7 @@ CONTENT_MAX_LEN = 256 * 10
 class Story(db.Model):
     id          = db.Column(db.Integer, primary_key=True)
 
-    category    = db.Column(db.Integer)
+    categories  = db.Column(db.String(256))
     latitude    = db.Column(db.Float)
     longitude   = db.Column(db.Float)
 
@@ -39,8 +28,8 @@ class Story(db.Model):
 
     def dict_repr(self):
         return {
-            'category':         Category(self.category).name,
-            'category_text':    Category(self.category).text(),
+            'categories':       self.categories.split(','),
+            'categories_text':  [CATEGORIES[k] for k in self.categories.split(',')],
             'latitude':         self.latitude,
             'longitude':        self.longitude,
             'title':            self.title,
