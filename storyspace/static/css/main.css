@@ -296,15 +296,14 @@ section#instruction-bar h2 {
 /*share overlay*/
 
 section#share-overlay {
-    /*margin-left: 250px;
+    margin-left: 250px;
     width: 55%;
     height: 80%;
     position: absolute;
     top: 65px;
-    */
     border-radius: 7px;
     background-color: rgba(50, 50, 50, .9);
-    /*visibility: hidden;*/
+    visibility: hidden;
     font-family: montserrat-semibold;
     color: white;
     padding: 30px 30px 0px 100px;

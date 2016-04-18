@@ -47,40 +47,40 @@ function bind_interfaces(stories, map, locator) {
 
     $('nav#top-nav ul li#share a').click(function (event) {
         console.log("clicked share button");
-        // event.stopPropagation();
-        // $('section#share-overlay').css('visibility', 'visible');
-        $('#dialog').dialog('open');
+        event.stopPropagation();
+        $('section#share-overlay').css('visibility', 'visible');
+        //$('#dialog').dialog('open');
     });
 
-    $('body').bind('click', function(e) {
-        if($('#dialog').dialog('isOpen')
-            && !$(e.target).is('.ui-dialog, a')
-            && !$(e.target).closest('.ui-dialog').length
-        ) {
-            $('#dialog').dialog('close');
-        }
-    });
+//    $('body').bind('click', function(e) {
+//        if($('#dialog').dialog('isOpen')
+//            && !$(e.target).is('.ui-dialog, a')
+//            && !$(e.target).closest('.ui-dialog').length
+//        ) {
+//            $('#dialog').dialog('close');
+//        }
+//    });
 
     //share overlay
-    $('#dialog').dialog({
-        autoOpen: false,
-        modal: false,
-        draggable: false,
-        resizable: false,
-        position:[250,65],
-        width:800,
+    //$('#dialog').dialog({
+        //autoOpen: false,
+        //modal: false,
+        //draggable: false,
+        //resizable: false,
+        //position:[250,65],
+        //width:800,
         // height:600,
         // open: function() {
         //     $('.ui-widget-overlay').bind('click', function() {
         //         $('#dialog').dialog('close');
         //     })
         // },
-    });
+    //});
 
      //share overlay close
     $('#share-overlay nav#share-close a').click(function () {
-        //$('section#share-overlay').css('visibility', 'hidden');
-        $('#dialog').dialog('close');
+        $('section#share-overlay').css('visibility', 'hidden');
+        //$('#dialog').dialog('close');
     });
 
     var allCategories = ['race', 'gender', 'sexuality', 'social_class'];
@@ -138,7 +138,7 @@ function bind_interfaces(stories, map, locator) {
         e.preventDefault();
 
         //error detection
-        if (!$("form#share-form input[name='category']:checked") || !document.share.title.value || !document.share.content.value) {
+        if (!$("form#share-form input[name='category']:checked").length || !document.share.title.value || !document.share.content.value) {
             alert("You haven't finished your story!");
         } else {
             //closes share overlay
