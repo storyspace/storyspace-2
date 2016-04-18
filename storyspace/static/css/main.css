@@ -18,6 +18,11 @@
     src: url(/assets/fonts/montserrat-bold.otf);
 }
 
+@font-face {
+    font-family: montserrat-light;
+    src: url(/assets/fonts/Montserrat-Light.otf);
+}
+
 body {
     background-color: black;
 }
@@ -119,11 +124,10 @@ section#contact-overlay nav#contact-close a:hover {
 }
 
 nav#top-nav {
-    font-family: montserrat-semi;
+    font-family: montserrat-regular;
     position: absolute;
-    top: -20px;
     width: 100%;
-    font-size: 14px;
+    font-size: 12px;
     padding: 20px 5px 35px 15px;
     background-color: #262626;
 }
@@ -134,14 +138,19 @@ nav#top-nav {
     font-size: 10px;
 }
 
-nav#top-nav ul.left-nav-logo li img {
+
+/*nav#top-nav ul.left-nav-logo li img {
     position: absolute;
     top: 28px;
-}
+}*/
 
 .left-nav {
     position: absolute;
-    left: 75px;
+    left: 25px;
+}
+
+.left-nav li:first-child {
+    font-family: montserrat-semibold;
 }
 
 .right-nav {
@@ -157,7 +166,7 @@ nav#top-nav ul li {
 
 nav#top-nav ul li.filter {
     font-family: montserrat-regular;
-    font-size: 11px;
+    font-size: 10px;
     margin-left: 60px;
 }
 
@@ -168,72 +177,92 @@ nav#top-nav ul li a {
 }
 
 nav#top-nav ul li.universe a {
-    border: 0px solid;
     padding: 5px 15px 5px 15px;
-    color: white;
+    color: black;
     text-decoration: none;
-    border-radius: 5px;
+    height: 20em;
 }
 
-nav#top-nav ul li.universe a.shown {
-    opacity: 1;
+nav#top-nav ul li.universe a#race.shown {}
+
+nav#top-nav ul li.universe a#race:not(.shown) {
+    border: 2px solid;
+    border-color: #C994F8;
+    background-color: #262626;
+    color: #C994F8;
 }
 
-nav#top-nav ul li.universe a:not(.shown) {
-    opacity: 0.5;
+nav#top-nav ul li.universe a#gender:not(.shown) {
+    border: 2px solid;
+    border-color: #B8E986;
+    background-color: #262626;
+    color: #B8E986;
+}
+
+nav#top-nav ul li.universe a#sexuality:not(.shown) {
+    border: 2px solid;
+    border-color: #87E1F5;
+    background-color: #262626;
+    color: #87E1F5;
+}
+
+nav#top-nav ul li.universe a#social_class:not(.shown) {
+    border: 2px solid;
+    border-color: #EFD63F;
+    background-color: #262626;
+    color: #EFD63F;
+}
+
+nav#top-nav ul li.universe a#all:not(.shown) {
+    border: 2px solid;
+    border-color: #DADADA;
+    background-color: #262626;
+    color: #DADADA;
 }
 
 nav#top-nav ul li.universe a#race {
-    background-color: #b66bab;
+    background-color: #C994F8;
+    border: 2px solid;
+    border-color: #C994F8;
 }
 
-nav#top-nav ul li.universe a#race:hover {
-    background-color: #895080;
+nav#top-nav ul li.universe a:hover,
+nav#top-nav ul li#share a:hover {
+    text-shadow: 0px 0px 2px;
 }
 
 nav#top-nav ul li.universe a#gender {
-    background-color: #e63f5f;
-}
-
-nav#top-nav ul li.universe a#gender:hover {
-    background-color: #AD2F47;
+    background-color: #B8E986;
+    border: 2px solid;
+    border-color: #B8E986;
 }
 
 nav#top-nav ul li.universe a#sexuality {
-    background-color: #51c6e0;
-}
-
-nav#top-nav ul li.universe a#sexuality:hover {
-    background-color: #3D95A8;
+    background-color: #87E1F5;
+    border: 2px solid;
+    border-color: #87E1F5;
 }
 
 nav#top-nav ul li.universe a#social_class {
-    background-color: #68bf76;
-}
-
-nav#top-nav ul li.universe a#social_class:hover {
-    background-color: #4E8F59;
+    background-color: #EFD63F;
+    border: 2px solid;
+    border-color: #EFD63F;
 }
 
 nav#top-nav ul li.universe a#all {
-    background-color: #808080;
-}
-
-nav#top-nav ul li.universe a#all:hover {
-    background-color: #555555;
+    background-color: #262626;
+    color: #DADADA;
+    border: 2px solid;
+    border-color: #DADADA;
 }
 
 nav#top-nav ul li#share a {
-    border: 0px solid;
+    border: 2px solid;
+    border-color: #DADADA;
     padding: 5px 15px 5px 15px;
-    background-color: #b6a536;
-    color: white;
+    background-color: #DADADA;
+    color: #262626;
     text-decoration: none;
-    border-radius: 5px;
-}
-
-nav#top-nav ul li#share a:hover {
-    background-color: #92842B;
 }
 
 
@@ -265,6 +294,7 @@ section#instruction-bar h2 {
 
 
 /*share overlay*/
+
 section#share-overlay {
     /*margin-left: 250px;
     width: 55%;
@@ -366,17 +396,17 @@ svg.story_icon {
 }
 
 svg.story_icon .race {
-    fill: #b66bab;
+    fill: #C994F8;
 }
 
 svg.story_icon .gender {
-    fill: #e63f5f;
+    fill: #B8E986;
 }
 
 svg.story_icon .sexuality {
-    fill: #51c6e0;
+    fill: #87E1F5;
 }
 
 svg.story_icon .social_class {
-    fill: #68bf76;
+    fill: #EFD63F;
 }

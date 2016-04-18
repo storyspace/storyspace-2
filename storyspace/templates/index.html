@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!--<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="{{ url_for('assets', filepath='css/vendor/leaflet.css') }}" />
     <link rel="stylesheet" href="{{ url_for('assets', filepath='css/main.css') }}">
 
     <title>Story Space</title>
@@ -17,7 +17,7 @@
     <!--top nav-->
     <nav id=top-nav>
         <ul class="left-nav-logo">
-            <li><img src="{{ url_for('assets', filepath='img/logo_small.png') }}" width=49 height=29></li>
+            <!--  <li><img src="{{ url_for('assets', filepath='img/logo_small.png') }}" width=49 height=29></li>-->
         </ul>
         <ul class="left-nav">
             <li>Story Space</li>
@@ -26,13 +26,13 @@
         </ul>
         <ul class="right-nav">
             <li class="filter"> Filter stories: </li>
-            <li class="universe"><a id="race" class="shown" href="#">Race</a></li>
-            <li class="universe"><a id="gender" class="shown" href="#">Gender</a></li>
-            <li class="universe"><a id="sexuality" class="shown" href="#">Sexuality</a></li>
-            <li class="universe"><a id="social_class" class="shown" href="#">Social Class</a></li>
-            <li class="universe"><a id="all" class="shown" href="#">Show All</a></li>
+            <li class="universe"><a id="race" class="shown" href="#">ETHNICITY</a></li>
+            <li class="universe"><a id="gender" class="shown" href="#">GENDER</a></li>
+            <li class="universe"><a id="sexuality" class="shown" href="#">SEXUALITY</a></li>
+            <li class="universe"><a id="social_class" class="shown" href="#">SOCIAL CLASS</a></li>
+            <li class="universe"><a id="all" class="shown" href="#">SHOW ALL</a></li>
             <li> | </li>
-            <li id="share"><a href="#">Share your story!</a>
+            <li id="share"><a href="#">SHARE YOUR STORY</a>
             </li>
             <!--Search Bar (in progress)
             <li>
