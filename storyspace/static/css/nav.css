@@ -23,7 +23,8 @@ nav#top-nav {
 }
 
 .info-nav,
-.contact-nav {
+.contact-nav,
+.list-nav {
     font-family: montserrat-regular;
     font-size: 10px;
 }
