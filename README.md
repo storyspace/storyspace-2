@@ -49,3 +49,13 @@ We adjusted the layout for the list view of stories to match the visual changes 
 We started to implement the functionality of creating poly-category stories (versus the mono-category stories of before) in the backend and frontend. This required changing the database schema, rewriting some of the form-based API, and modifying the frontend JavaScript used to fetch and persist the stories.
 
 We also wrote some JavaScript to dynamically generate the "pie chart" as SVG circle sectors for the Leaflet map icons.
+
+# Week 5
+
+After receiving feedback on our new changes to the buttons, we changed the colors again to be more complementary with one another. We also decided to resort back to the previous hover effect that we originally had and decided to not use the border style box anymore. 
+
+We finalized the design for the list view layout of the story after making small changes to the design and the font choices. We then coded a prototype that now includes the stories from the map view as well as photos. It's linked on the navigation bar for the purpose of viewing and interacting with it but we plan to incorporate an element that makes it easy to toggle between the list view and the map view of the stories. 
+
+We researched various resources (based off of feedback from our audience testing from des 157) to provide help to users who go to story space and want to seek help or are interested in taking action after reading stories (because they feel empowered).
+
+
