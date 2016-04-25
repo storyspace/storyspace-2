@@ -161,7 +161,7 @@ nav#top-nav {
 nav#top-nav ul li {
     display: inline;
     margin-right: 15px;
-    color: lightgray;
+    color: #DADADA;
 }
 
 nav#top-nav ul li.filter {
@@ -181,91 +181,69 @@ nav#top-nav ul li.universe a {
     color: black;
     text-decoration: none;
     height: 20em;
+    border: 2px solid transparent;
 }
 
-nav#top-nav ul li.universe a#race.shown {}
-
-nav#top-nav ul li.universe a#race:not(.shown) {
-    border: 2px solid;
-    border-color: #C994F8;
-    background-color: #262626;
-    color: #C994F8;
+nav#top-nav ul li.universe a.shown {
+    opacity:1;
 }
 
-nav#top-nav ul li.universe a#gender:not(.shown) {
-    border: 2px solid;
-    border-color: #B8E986;
-    background-color: #262626;
-    color: #B8E986;
-}
-
-nav#top-nav ul li.universe a#sexuality:not(.shown) {
-    border: 2px solid;
-    border-color: #87E1F5;
-    background-color: #262626;
-    color: #87E1F5;
-}
-
-nav#top-nav ul li.universe a#social_class:not(.shown) {
-    border: 2px solid;
-    border-color: #EFD63F;
-    background-color: #262626;
-    color: #EFD63F;
-}
-
-nav#top-nav ul li.universe a#all:not(.shown) {
-    border: 2px solid;
-    border-color: #DADADA;
-    background-color: #262626;
-    color: #DADADA;
+nav#top-nav ul li.universe a:not(.shown) {
+    opacity:.5;
 }
 
 nav#top-nav ul li.universe a#race {
-    background-color: #C994F8;
-    border: 2px solid;
-    border-color: #C994F8;
+    background-color: #B071E7;
 }
-
-nav#top-nav ul li.universe a:hover,
-nav#top-nav ul li#share a:hover {
-    text-shadow: 0px 0px 2px;
+nav#top-nav ul li.universe a#race:hover {
+    background-color: #8455AD;
 }
 
 nav#top-nav ul li.universe a#gender {
-    background-color: #B8E986;
-    border: 2px solid;
-    border-color: #B8E986;
+    background-color: #EFD63F;
+}
+nav#top-nav ul li.universe a#gender:hover {
+    background-color: #B3A12F;
 }
 
 nav#top-nav ul li.universe a#sexuality {
-    background-color: #87E1F5;
-    border: 2px solid;
-    border-color: #87E1F5;
+    background-color: #38CDEF;
+}
+
+nav#top-nav ul li.universe a#sexuality:hover {
+    background-color: #2A9AB3;
 }
 
 nav#top-nav ul li.universe a#social_class {
-    background-color: #EFD63F;
-    border: 2px solid;
-    border-color: #EFD63F;
+    background-color: #F49E47;
+}
+
+nav#top-nav ul li.universe a#social_class:hover {
+    background-color: #B77735;
 }
 
 nav#top-nav ul li.universe a#all {
     background-color: #262626;
     color: #DADADA;
-    border: 2px solid;
     border-color: #DADADA;
 }
 
+nav#top-nav ul li.universe a#all:hover {
+    color: #A4A4A4;
+    border-color: #A4A4A4;
+}
+
 nav#top-nav ul li#share a {
-    border: 2px solid;
-    border-color: #DADADA;
     padding: 5px 15px 5px 15px;
     background-color: #DADADA;
     color: #262626;
     text-decoration: none;
+    border: 2px solid transparent;
 }
 
-
+nav#top-nav ul li#share a:hover {
+     background-color: #A4A4A4;
+}
 /*
 nav#top-nav ul li form#search-bar input {
     background: none;
@@ -395,17 +373,17 @@ svg.story_icon {
 }
 
 svg.story_icon .race {
-    fill: #C994F8;
+    fill: #B071E7;
 }
 
 svg.story_icon .gender {
-    fill: #B8E986;
+    fill: #EFD63F;
 }
 
 svg.story_icon .sexuality {
-    fill: #87E1F5;
+    fill: #38CDEF;
 }
 
 svg.story_icon .social_class {
-    fill: #EFD63F;
+    fill: #F49E47;
 }
