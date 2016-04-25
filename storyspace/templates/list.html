@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Story Space</title>
+
+    <link rel=stylesheet href=../static/css/nav.css>
+    <link rel=stylesheet href=../static/css/list.css>
+</head>
+
+<body>
+    <!--top nav-->
+    <nav id=top-nav>
+        <ul class="left-nav-logo">
+            <!--  <li><img src="{{ url_for('assets', filepath='img/logo_small.png') }}" width=49 height=29></li>-->
+        </ul>
+        <ul class="left-nav">
+            <li>Story Space</li>
+            <li><a href="#" class="info-nav">About</a></li>
+            <li><a href="#" class="contact-nav">Contact Us</a></li>
+        </ul>
+        <ul class="right-nav">
+            <li class="filter"> Filter stories: </li>
+            <li class="universe"><a id="race" class="shown" href="#">ETHNICITY</a></li>
+            <li class="universe"><a id="gender" class="shown" href="#">GENDER</a></li>
+            <li class="universe"><a id="sexuality" class="shown" href="#">SEXUALITY</a></li>
+            <li class="universe"><a id="social_class" class="shown" href="#">SOCIAL CLASS</a></li>
+            <li class="universe"><a id="all" class="shown" href="#">SHOW ALL</a></li>
+            <li> | </li>
+            <li id="share"><a href="#">SHARE YOUR STORY</a>
+            </li>
+            <!--Search Bar (in progress)
+            <li>
+
+                <form name="search" id="search-bar">
+                    <input type="text" name="search" placeholder="Search">
+                </form>
+            </li>-->
+        </ul>
+    </nav>
+
+    <!--list view-->
+    <div class="grid">
+        <div class="grid-item">
+            <h1><!--marker + title--><img src="../static/img/icon-class.gif" width=25 height=25>  Need for change</h1>
+            <h3><!--location + name-->Davis, CA | by Activist Gal</h3>
+            <p class=story-image>
+                <img src="../static/img/story1.jpg">
+            </p>
+            <p class=story>
+                <!--story-->Throughout human history, most people live and die in the social class into which they were born. If they were born poor, chances are they will die poor. One way societies can help people rise in social class is to initiate new enterprises, like improved educational opportunities or technological advancements. When this happens, the need for workers in higher-class jobs motivates and enables people to move up in social class, which can help them to escape poverty.</p>
+            <footer>
+                <!--tags-->Tags: #socialclass #poverty #economy</footer>
+        </div>
+        <div class="grid-item">
+            <h1><!--marker + title--><img src="../static/img/icon-sexuality.gif" width=25 height=25>  Parents don't accept me
+</h1>
+            <h3><!--location + name-->by LonelyGirl</h3>
+            <p class=story-image>
+                <!--image-->
+            </p>
+            <p class=story>
+                <!--story-->When I was in college, I started dating my roommate, who was also a girl. I never considered myself to be gay or even bisexual, so it was very different for me. I come from a very conservative, religious family, so I was constantly in denial of my feelings. My girlfriend was very patient. When I finally told my mom about our relationship, she helped me through it. Obviously, there was a lot of backlash, and my parents all but disowned me. I felt like I was the butt of every joke. I had always been the golden child with straight A’s, and suddenly I was the black sheep of my family just because of who I was dating. I couldn’t understand how my parents could suddenly stop loving me.</p>
+            <footer>
+                <!--tags-->#sexuality #gender</footer>
+        </div>
+        <div class="grid-item">
+            <h1><!--marker + title--><img src="../static/img/icon-gender.gif" width=25 height=25> Because I'm a girl</h1>
+            <h3><!--location + name-->Davis, CA | by Feminist</h3>
+            <p class=story-image>
+                <img src="../static/img/story3.jpg">
+            </p>
+            <p class=story>
+                <!--story-->Because you're a girl Ever since I was little, I always had to wash the dishes. If I didn’t, then I would be grounded. I have three brothers who did nothing after dinner, so when I was 14 I asked my dad why I always had to wash the dishes. His only answer was, “Because you’re a girl.” I was pissed off and we got into a fight because he never made my brothers do anything around the house. My brothers and parents expect me to have a bunch of kids and become a housewife, but ever since that day I decided to start doing things for myself and myself only.</p>
+            <footer>
+                <!--tags-->#gender #sexist #family</footer>
+        </div>
+        <div class="grid-item">
+            <h1><!--marker + title--><img src="../static/img/icon-class.gif" width=25 height=25>  Susie's Senior Dogs</h1>
+            <h3><!--location + name-->San Francisco, CA | by Fred</h3>
+            <p class=story-image>
+                <img src="../static/img/story4.jpg">
+            </p>
+            <p class=story>
+                <!--story-->Susie passed away yesterday evening. She came into my life quite unexpectedly five years ago. I was photographing in Brooklyn one evening when I saw the coolest little dog sitting on a stoop. I sat down to pet her, and after a few minutes, her owner told me that he was unable to care for her anymore. He asked if I could take her. I was broke at the time. I was sleeping on a friend’s couch. And everyone that I asked told me that it was ‘not the right time’ for a dog. But I was so charmed by Susie, and the whole encounter seemed so fated, that I offered to take her.
+                <br>
+                <br> It was one of the best decisions I ever made. Susie was twelve years old at the time and didn’t need much. I’d never had a dog before. It was a new experience. I was introduced for the first time to a dog’s unexplainable and unconditional love. After a few weeks, it seemed that Susie’s only concern in life was staying as close to me as possible. There was now a joyous reunion waiting for me at the end of every workday. And I learned that there are few greater blessings than a wildly happy dog greeting you at the door.</p>
+            <footer>
+                <!--tags-->#dog #love</footer>
+        </div>
+        <div class="grid-item">
+            <h1><!--marker + title--><img src="../static/img/icon-ethnicity.gif" width=25 height=25>  Letting go</h1>
+            <h3><!--location + name-->by Mary</h3>
+            <p class=story-image>
+                <!--image-->
+            </p>
+            <p class=story>
+                <!--story-->I stayed in a bad relationship for three years. I was sharing a man with someone else. He wouldn’t answer his phone at certain times of the night. Or he was always working late. It was three years of letting him feel good at my expense. Three years of feeling ‘less than.’ I kept telling myself that I could be a better girlfriend. Or that I could fix it. Or that I should give it more time. I was down to 108 pounds from all the stress. I was constantly clenching my phone. I was always angry and arguing and serious. Finally one night the other woman got a hold of his phone, and she called me, and started asking me all these questions. And I decided that I couldn’t live like that anymore. I walked away. That was a year ago. My spirit feels so much lighter now. I’ve gained back twenty pounds. And I’m laughing again. During those years, it took a joke to make me laugh. Now I can laugh at anything.</p>
+            <footer>
+                <!--tags-->#ethnicity #change #relationship</footer>
+        </div>
+        <div class="grid-item">
+            <h1><!--marker + title--><img src="../static/img/icon-ethnicity.gif" width=25 height=25>  Mother knows best</h1>
+            <h3><!--location + name-->Sacramento, CA | by Linda L.</h3>
+            <p class=story-image>
+                <!--image-->
+            </p>
+            <p class=story>
+                <!--story-->I tried to warn her about her last boyfriend, but she didn’t want to listen. Once I overheard him telling her that she needed to respect him. I knew that was bad news. Then he left his home because he got in an argument with his family. I told her: ‘If he’ll do that to his family, he’ll do it to you too.’ But she didn’t listen. She stopped talking to me for a long time. Then sure enough, he took off and left her. She came back and thanked me. Go on, tell them. Mother was right.</p>
+            <footer>
+                <!--tags-->#ethnicity #family</footer>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../static/js/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="../static/js/vendor/masonry.pkgd.min.js"></script>
+    <script src="../static/js/vendor/readmore.min.js"></script>
+    <script>
+        var $grid = $('.grid').imagesLoaded(function () {
+            $('.grid').masonry({
+                itemSelector: '.grid-item',
+                gutter: 20,
+            });
+            
+            $('.grid-item p.story').readmore({
+                speed: 100,
+                collapsedHeight: 400,
+                heightMargin: 20,
+                moreLink: '<a href="#">Read more...</a>',
+                lessLink: '<a href="#">Read less...</a>',
+                blockCSS: 'font-family:neuton; font-size:18px; text-decoration:none; color:black;'
+            });
+        });
+    </script>
+</body>
+
+</html>
